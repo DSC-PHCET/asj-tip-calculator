@@ -44,4 +44,20 @@ class CalculatorTests {
         onView(withId(R.id.newTip)).check(matches(withText("Tip Amount : Rs. 10.0")))
     }
 
+    @Test
+    fun calculate_second_tip() {
+        onView(withId(R.id.tipValue)).perform(typeText("50.00"))
+        onView(withId(R.id.good)).perform(click())
+        onView(withId(R.id.button)).perform(click())
+        onView(withId(R.id.newTip)).check(matches(withText("Tip Amount : Rs. 7.5")))
+    }
+
+    @Test
+    fun calculate_third_tip() {
+        onView(withId(R.id.tipValue)).perform(typeText("50.00"))
+        onView(withId(R.id.okay)).perform(click())
+        onView(withId(R.id.button)).perform(click())
+        onView(withId(R.id.newTip)).check(matches(withText("Tip Amount : Rs. 5.0")))
+    }
+
 }
