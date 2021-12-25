@@ -18,12 +18,14 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     fun clickButton(view: android.view.View) {
 
+        //Hooks
         val tipValue: TextInputEditText = findViewById(R.id.tipValue)
         val radioG: RadioGroup = findViewById(R.id.radioGroup)
         val newTip: TextView = findViewById(R.id.newTip)
         val tipSwitch: SwitchMaterial = findViewById(R.id.roundSwitch)
 
-        val amount = (tipValue.text.toString()).toDoubleOrNull()
+
+        val amount = (tipValue.text.toString()).toDoubleOrNull() //
 
         if(amount == null || amount == 0.0) {
             newTip.text = "Tip Amount : Rs. 0.0"
